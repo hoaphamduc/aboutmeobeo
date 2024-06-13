@@ -2,7 +2,7 @@ if (CSS.supports('animation-timeline', 'auto')) {
     document.querySelector('img').animate(
         [
             { transform: 'scale(1)', opacity: 1 },
-            { transform: 'scale(3)', opacity: 0 }
+            { transform: 'scale(5)', opacity: 0 }
         ],
         {
             duration: 1000,
@@ -79,3 +79,4 @@ menuIcon.onclick = () => {
     menuIcon.classList.toggle('bx-x');
     navbar.classList.toggle('active');
 }
+
