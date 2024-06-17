@@ -769,7 +769,7 @@ section {
         margin: 0 auto;
     }
     .home-img img {
-        margin-top: -40px;
+        margin-top: 0px;
         width: 50vw;
         height: 50vw;
     }
