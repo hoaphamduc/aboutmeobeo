@@ -31,12 +31,12 @@ html {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 4rem 12% 4rem;
+    padding: 1.5rem 3% 1.5rem;
     background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
     display: flex;
     justify-content: center;
-    z-index: 5;
+    z-index: 999999;
 }
 
 .logo {
@@ -522,7 +522,7 @@ section {
 
 .testimonial-item {
     min-height: 550px;
-    max-width: 400px;
+    max-width: 320px;
     background: rgba(0, 0, 0, 0.7);
     border: 3px solid rgba(238, 238, 238, 0.2);
     border-radius: 2rem;
@@ -668,7 +668,7 @@ section {
 @media (max-width: 1368px) {
     .wrapper {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 3rem;
     }
 }
@@ -681,6 +681,11 @@ section {
         padding-bottom: 7rem;
         grid-template-columns: repeat(2,1fr);
         margin: 0 5rem;
+    }
+    .wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
     }
 }
 
