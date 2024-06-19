@@ -22,15 +22,16 @@
 }
 .carousel .list .item .content{
     position: absolute;
-    top: 20%;
-    width: 1140px;
-    max-width: 80%;
-    left: 50%;
-    transform: translateX(-50%);
-    padding-right: 30%;
+    top: 20px;
+    width: auto;
+    max-width: calc(100% - 40px);
+    left: 20px;
+    padding: 20px;
+    border-radius: 20px;
     box-sizing: border-box;
     color: #fff;
     text-shadow: 0 5px 10px #0004;
+    background-color: #0000007e;
 }
 .carousel .list .item .author{
     font-weight: bold;
@@ -44,6 +45,7 @@
 }
 .carousel .list .item .topic{
     color: var(--main-color);
+    font-size: 30px;
 }
 .carousel .list .item .buttons{
     display: grid;
@@ -58,6 +60,11 @@
     letter-spacing: 3px;
     font-family: Poppins;
     font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.carousel .list .item .buttons button:hover{
+    transform: scale(1.1);
 }
 .carousel .list .item .buttons button:nth-child(2){
     background-color: transparent;
@@ -84,7 +91,8 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 20px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .thumbnail .item .content{
     color: #fff;
@@ -92,6 +100,9 @@
     bottom: 10px;
     left: 10px;
     right: 10px;
+    background-color: #0000009f;
+    padding: 3px;
+    border-radius: 5px;
 }
 .thumbnail .item .content .title{
     font-weight: 500;
@@ -102,11 +113,10 @@
 /* arrows */
 .arrows{
     position: absolute;
-    top: 80%;
-    right: 52%;
+    bottom: 20px;
+    left: 20px;
     z-index: 100;
-    width: 300px;
-    max-width: 30%;
+    width: auto;
     display: flex;
     gap: 10px;
     align-items: center;
@@ -129,6 +139,7 @@
 
 .carousel .list .item .content .des {
     max-width: 400px;
+    font-size: 13px;
 }
 
 /* animation */
@@ -288,7 +299,6 @@
         font-size: 30px;
     }
     .carousel{
-        height: 100%;
         width: 100%;
     }
 }

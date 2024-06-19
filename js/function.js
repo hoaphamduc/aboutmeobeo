@@ -79,3 +79,9 @@ menuIcon.onclick = () => {
     menuIcon.classList.toggle('bx-x');
     navbar.classList.toggle('active');
 }
+
+// open project in new tab
+
+function openProject(link) {
+    window.open(link, "_blank");
+}
