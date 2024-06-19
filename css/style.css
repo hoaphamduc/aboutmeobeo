@@ -60,7 +60,7 @@ html {
 .navbar {
     display: flex;
     align-items: center;
-    margin-left: calc(100% - 190px - 600px);
+    margin-left: calc(100% - 6% - 90px - 760px);
 }
 
 .navbar a {
@@ -325,6 +325,12 @@ section {
     margin: 5rem 0;
 }
 
+.skills {
+    background-color: var(--second-bg-color);
+    color: var(--text-color);
+    padding: 10rem 3% 2rem;
+}
+
 .education {
     padding: 100px 15px;
     background-color: var(--second-bg-color);
@@ -378,7 +384,7 @@ section {
     box-shadow: 0 0 25px var(--main-color),
                 0 0 50px var(--main-color);
     position: absolute;
-    left: calc(50% - 8px);
+    left: calc(50% - 9px);
     border-radius: 50%;
     top: 10px;
 }
@@ -449,7 +455,23 @@ section {
     gap: 2.5rem;
 }
 
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+    gap: 2.5rem;
+}
+
 .service-box {
+    background-color: var(--main-color);
+    height: 300px;
+    border-radius: 3rem;
+    border: 5px solid transparent;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+.skills-box {
     background-color: var(--main-color);
     height: 300px;
     border-radius: 3rem;
@@ -465,6 +487,19 @@ section {
     transform: scale(1.03);
 }
 
+.skills-box:hover {
+    background: white;
+    color: #000;
+    border: 5px solid var(--main-color);
+    transform: scale(1.03);
+}
+
+.skill-icons {
+    font-size: 50px;
+    width: 100%;
+    text-align: center;
+}
+
 .service-box .service-info {
     display: flex;
     flex-direction: column;
@@ -475,13 +510,23 @@ section {
     padding: 5rem 5rem;
 }
 
-.service-info h4 {
-    font-size: 3rem;
+.skills-box .skill-info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    max-height: 200px;
+    justify-content: left;
+    align-items: baseline;
+    padding: 5rem 5rem;
+}
+
+.service-info h4, .skill-info h4 {
+    font-size: 2.5rem;
     font-weight: 800;
     line-height: 2;
 }
 
-.service-info p {
+.service-info p, .skill-info p {
     font-size: 1.6rem;
     font-weight: 600;
     max-height: 100px;
@@ -729,6 +774,9 @@ section {
     .timeline-date {
         font-size: 16px;
     }
+    .skills-container {
+        grid-template-columns: repeat(2,1fr);
+    }
 }
 
 @media (max-width: 895px) {
@@ -797,5 +845,8 @@ section {
     }
     .home-content {
         margin-top: 0rem;
+    }
+    .skills-container {
+        grid-template-columns: repeat(1,1fr);
     }
 }

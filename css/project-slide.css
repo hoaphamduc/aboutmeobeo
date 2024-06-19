@@ -74,7 +74,7 @@
 /* thumbail */
 .thumbnail{
     position: absolute;
-    bottom: 50px;
+    bottom: 20px;
     left: 50%;
     width: max-content;
     z-index: 100;
