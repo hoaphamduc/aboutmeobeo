@@ -14,7 +14,7 @@ body {
 }
 
 html {
-    font-size: 60%;
+    /* font-size: 60%; */
     overflow-x: hidden;
     scroll-behavior: smooth;
 }
@@ -40,7 +40,7 @@ html {
 }
 
 .logo {
-    font-size: 3rem;
+    font-size: 28px;
     color: var(--text-color);
     font-weight: 800;
     cursor: pointer;
@@ -60,13 +60,13 @@ html {
 .navbar {
     display: flex;
     align-items: center;
-    margin-left: calc(100% - 6% - 90px - 760px);
+    margin-left: calc(100% - 6% - 90px - 884px);
 }
 
 .navbar a {
-    font-size: 1.8rem;
+    font-size: 17px;
     color: var(--text-color);
-    margin-left: 4rem;
+    margin-left: 38px;
     font-weight: 500;
     transition: 0.3s ease;
     border-bottom: 3px solid transparent;
@@ -79,7 +79,7 @@ html {
 }
 
 #menu-icon {
-    font-size: 4.6rem;
+    font-size: 44px;
     color: var(--main-color);
     display: none;
     margin-left: calc(100% - 190px);
@@ -184,16 +184,16 @@ section {
 }
 
 .home-content h3 {
-    margin-bottom: 2rem;
-    margin-top: 1rem;
+    margin-bottom: 19px;
+    margin-top: 10px;
     color: var(--text-color);
-    font-size: 2.5rem;
+    font-size: 24px;
 }
 
 .home-content h1 {
-    font-size: 6rem;
+    font-size: 58px;
     font-weight: 700;
-    margin-top: 1.5rem;
+    margin-top: 14px;
     line-height: 1;
     color: var(--text-color);
 }
@@ -221,7 +221,7 @@ section {
 }
 
 .home-content p {
-    font-size: 1.5rem;
+    font-size: 14px;
     font-weight: 500;
     line-height: 1.8;
     max-width: 1000px;
@@ -232,14 +232,14 @@ section {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 4.5rem;
-    height: 4.5rem;
+    width: 40px;
+    height: 40px;
     background: transparent;
     border: 2px solid var(--main-color);
-    font-size: 2.5rem;
+    font-size: 24px;
     border-radius: 50%;
     color: var(--main-color);
-    margin: 3rem 1.5rem 3rem 0;
+    margin: 29px 14px 29px 0;
     transition: 0.3s ease-in-out;
 }
 
@@ -252,11 +252,11 @@ section {
 
 .btn {
     display: inline-block;
-    padding: 1rem 2.8rem;
+    padding: 10px 27px;
     background: var(--main-color);
     box-shadow: 0 0 25px var(--main-color);
     border-radius: 4rem;
-    font-size: 1.6rem;
+    font-size: 15px;
     color: #000;
     border: 2px solid transparent;
     letter-spacing: 0.1rem;
@@ -322,9 +322,9 @@ section {
 }
 
 .heading {
-    font-size: 8rem;
+    font-size: 70px;
     text-align: center;
-    margin: 5rem 0;
+    margin: 30px 0;
 }
 
 .skills {
@@ -513,7 +513,7 @@ section {
     text-align: left;
     justify-content: left;
     align-items: baseline;
-    padding: 4rem 4rem;
+    padding: 38px 38px;
 }
 
 .skills-box .skill-info {
@@ -522,7 +522,7 @@ section {
     text-align: left;
     justify-content: left;
     align-items: baseline;
-    padding: 4rem 4rem;
+    padding: 38px 38px;
 }
 
 .skills-box .skill-info ul {
@@ -531,7 +531,7 @@ section {
 }
 
 .service-info h4 {
-    font-size: 2.5rem;
+    font-size: 24px;
     font-weight: 800;
     line-height: 2;
 }
@@ -579,7 +579,7 @@ section {
 .wrapper {
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    gap: 3rem;
+    gap: 30px;
 }
 
 .testimonial-item {
@@ -589,7 +589,7 @@ section {
     background: rgba(0, 0, 0, 0.7);
     border: 3px solid rgba(238, 238, 238, 0.2);
     border-radius: 2rem;
-    margin: 0 2rem;
+    margin: 0 10px;
     padding: 20px 40px;
     cursor: pointer;
     display: flex;
@@ -597,7 +597,7 @@ section {
     align-items: center;
     justify-content: center;
     text-align: center;
-    gap: 1.5rem;
+    gap: 14px;
     color: var(--text-color);
     transition: 0.4s ease-in-out;
 }
@@ -609,11 +609,11 @@ section {
 }
 
 .testimonial-item h2 {
-    font-size: 2.8rem;
+    font-size: 27px;
 }
 
 .testimonial-item p {
-    font-size: 1.3rem;
+    font-size: 13px;
     word-wrap: break-word;
     word-break: break-word;
     overflow-wrap: break-word;
@@ -621,7 +621,7 @@ section {
 
 .star-gold {
     color: gold;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .contact {
@@ -629,7 +629,7 @@ section {
 }
 
 .contact h2 {
-    margin-bottom: 3rem;
+    margin-bottom: 29px;
     color: var(--text-color);
 }
 
@@ -637,8 +637,8 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 3rem;
-    margin: 5rem auto;
+    gap: 29px;
+    margin: 48px auto;
     text-align: center;
 }
 
@@ -651,8 +651,8 @@ section {
 .contact form .input-box input,
 .contact form textarea {
     width: 100%;
-    padding: 2.5rem;
-    font-size: 1.8rem;
+    padding: 24px;
+    font-size: 17px;
     color: var(--text-color);
     background: var(--second-bg-color);
     border-radius: 2rem;
@@ -662,7 +662,8 @@ section {
 }
 
 .contact form .btn {
-    margin-top: 2rem;
+    margin-top: 20px;
+    color: #fff;
 }
 
 .leave-message {
@@ -731,8 +732,6 @@ section {
     width: 100%;
     height: 500px;
     display: block;
-    margin-top: 100px;
-    margin-left: 30px;
     overflow: auto;
     border: 1px solid #000;
 }
@@ -813,13 +812,13 @@ section {
     font-size: 25px;
     color: var(--main-color);
     border: 2px solid var(--main-color);
-    width: 42px;
-    height: 42px;
-    line-height: 42px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
     display: inline-block;
     text-align: center;
     border-radius: 50%;
-    margin: 0 10px;
+    margin: 0 5px;
     transition: 0.3s ease-in-out;
 }
 
@@ -865,32 +864,29 @@ section {
     .wrapper {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 3rem;
+        gap: 29px;
     }
 }
 
 @media (max-width: 1285px) {
-    html {
-        font-size: 55%;
-    }
     .services-container {
-        padding-bottom: 7rem;
+        padding-bottom: 62px;
         grid-template-columns: repeat(2,1fr);
-        margin: 0 5rem;
+        margin: 0 44px;
     }
     .wrapper {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 3rem;
+        gap: 26px;
     }
 }
 
 @media (max-width: 991px) {
     header {
-        padding: 2rem 3%;
+        padding: 18px 3%;
     }
     section {
-        padding: 10rem 3% 2rem;
+        padding: 88px 3% 18px;
     }
     .timeline-item::before {
         left: 7px;
@@ -905,7 +901,7 @@ section {
         left: 0;
     }
     .services {
-        padding-bottom: 7rem;
+        padding-bottom: 62px;
     }
     .testimonials .wrapper {
         grid-template-columns: repeat(1, 1fr);
@@ -914,13 +910,13 @@ section {
         flex-direction: column;
     }
     .footer {
-        padding: 2rem 3%;
+        padding: 18px 3%;
     }
     .timeline-content {
         padding: 20px 20px;
     }
     .heading {
-        font-size: 4rem;
+        font-size: 35.2px;
     }
     .timeline-date {
         font-size: 16px;
@@ -953,18 +949,18 @@ section {
     }
     .navbar a {
         display: block;
-        font-size: 2rem;
-        margin: 3rem 0;
+        font-size: 18px;
+        margin: 26px 0;
         color: #fff;
     }
     .home {
         flex-direction: column-reverse;
     }
     .home-content h3 {
-        font-size: 2rem;
+        font-size: 18px;
     }
     .home-content h1 {
-        font-size: 4rem;
+        font-size: 35px;
         margin-top: 0;
     }
     .home-content p {
@@ -972,12 +968,12 @@ section {
         margin: 0 auto;
     }
     .home-img img {
-        margin-top: 0px;
+        margin-top: 500px;
         width: 50vw;
         height: 50vw;
     }
     .services h2 {
-        margin-bottom: 3rem;
+        margin-bottom: 26px;
     }
     .services-container {
         grid-template-columns: repeat(1,1fr);
