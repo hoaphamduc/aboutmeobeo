@@ -42,7 +42,7 @@
         <div class="home-content">
             <h1>Hi,I'm <br><span style="margin-top: 10px;">Pham Duc Hoa</span></h1>
             <h3 class="text-animation">I'm a <span id="text-span"></span><span class="cursor"></span></h3>
-            <p>Ble ble ble ble ble ble ble ble ble ble ble </p>
+            <p>Code is poetry. With each line, programmers write the future of the digital world.</p>
 
             <div class="social-icons">
                 <a href="https://www.facebook.com/meobeodangiuu/" target="_blank"><i class='bx bxl-facebook' ></i></a>
@@ -99,7 +99,7 @@
                 <div class="timeline-date">Jan 2024 - now</div>
                 <div class="timeline-content">
                     <h3>Thaisonsoft</h3>
-                    <p>.Net Developer (Intern)</p>
+                    <p>.Net Developer</p>
                 </div>
             </div>
         </div>
@@ -116,9 +116,9 @@
                     <div class="content">
                         <div class="author">meobeo</div>
                         <div class="title">HNUE Map</div>
-                        <div class="topic">Interactive Map</div>
+                        <div class="topic">#InteractiveMap</div>
                         <div class="des">
-                            HNUE Map provides detailed and accurate maps of the entire campus, helping users easily navigate from one point to another in the quickest way possible. Additionally, users can search for detailed information about each location, including opening hours, contact information, area, and ratings from other users. Users can bookmark favorite locations, rate places, and share information with others.
+                            HNUE Map provides detailed and accurate maps of the entire campus, helping users easily navigate from one point to another in the quickest way possible.
                         </div>
                         <div class="buttons">
                             <button onclick="openProject('https://hnuemapforyou.netlify.app/')">ACCESS</button>
@@ -130,7 +130,7 @@
                     <div class="content">
                         <div class="author">meobeo</div>
                         <div class="title">Blue Web String</div>
-                        <div class="topic">Landing Page</div>
+                        <div class="topic">#LandingPage</div>
                         <div class="des">
                             Landing page of Blue Web String
                         </div>
@@ -144,7 +144,7 @@
                     <div class="content">
                         <div class="author">meobeo</div>
                         <div class="title">Tarot Reader</div>
-                        <div class="topic">Tarot</div>
+                        <div class="topic">#Tarot</div>
                         <div class="des">
                             A cute website made by Meobeo for you to view tarot readings. Wishing you all a joyful time!
                         </div>
@@ -158,7 +158,7 @@
                     <div class="content">
                         <div class="author">meobeo</div>
                         <div class="title">Love Message</div>
-                        <div class="topic">Quotes</div>
+                        <div class="topic">#Quotes</div>
                         <div class="des">
                             Read interesting quotes every day!
                         </div>
@@ -497,22 +497,32 @@
     <section class="leave-message" id="leave-message">
         
         <h2 class="heading" style="color: #000;">Leave Me A Message</h2>
-        <div id="list-comment">
-        </div>
-        <div id="comment-container">
-            <div class="input-group-custom" style="position: absolute; top: 0; margin-top: 0; width: calc(100% - 108px);">
-                <input id="comment-input" required="" type="text" name="text" autocomplete="off" class="input">
-                <label class="user-label" style="background-color: #fff;">Text me something</label>
-            </div>
-            <button id="send-comment"></button>
-        </div>
-        <button id="login">login với gg</button>
-        <button id="signout">logout</button>
         <div id="user-info">
             <img id="userProfilePicture">
             <span id="userName"></span>
             <span id="userEmail"></span>
         </div>
+
+        <div id="cmd-toolbar">
+            <img src="Icon/Icon-cmd.png" alt="Icon cmd">
+            <span>Command Prompt</span>
+            <button id="signout">Log out</button>
+        </div>
+
+        <div id="list-comment">
+        </div>
+
+        <div id="comment-container">
+            <div class="input-group-custom" style="position: absolute; top: 0; margin-top: 0; width: calc(100% - 68px);">
+                <input id="comment-input" required="" type="text" name="text" autocomplete="off" class="input">
+                <label class="user-label" id="username-label" style="background-color: #fff;">Text me something</label>
+            </div>
+            <button id="send-comment"></button>
+        </div>
+        
+        <button id="login">Login with Google<span class="blinking-cursor">_</span></button>
+        
+        
     </section>
 
     <footer class="footer">

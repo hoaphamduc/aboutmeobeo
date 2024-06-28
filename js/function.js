@@ -85,3 +85,15 @@ menuIcon.onclick = () => {
 function openProject(link) {
     window.open(link, "_blank");
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    const commentInput = document.getElementById('comment-input');
+    const sendCommentButton = document.getElementById('send-comment');
+
+    commentInput.addEventListener("keypress", function(event) {
+        if (event.key === "Enter" || event.keyCode === 13) {
+            event.preventDefault();
+            sendCommentButton.click();
+        }
+    });
+});

@@ -7,7 +7,7 @@
     margin: auto;
     overflow: hidden;
     position: relative;
-    margin-top: -30px;
+    margin-top: 40px;
 }
 .carousel .list .item{
     width: 100%;
@@ -35,19 +35,19 @@
 }
 .carousel .list .item .author{
     font-weight: bold;
-    letter-spacing: 5px;
-    font-size: 1.5em;
+    letter-spacing: 2px;
+    font-size: 18px;
     padding-left: 2px;
 }
 .carousel .list .item .title,
 .carousel .list .item .topic{
-    font-size: 5em;
+    font-size: 50px;
     font-weight: bold;
     line-height: 1.3em;
 }
 .carousel .list .item .topic{
     color: var(--main-color);
-    font-size: 30px;
+    font-size: 20px;
 }
 .carousel .list .item .buttons{
     display: grid;
@@ -108,9 +108,11 @@
 }
 .thumbnail .item .content .title{
     font-weight: 500;
+    font-size: 15px;
 }
 .thumbnail .item .content .description{
     font-weight: 300;
+    font-size: 13px;
 }
 /* arrows */
 .arrows{
@@ -133,6 +135,7 @@
     font-family: monospace;
     font-weight: bold;
     transition: .5s;
+    cursor: pointer;
 }
 .arrows button:hover{
     background-color: #fff;
@@ -142,6 +145,8 @@
 .carousel .list .item .content .des {
     max-width: 400px;
     font-size: 13px;
+    margin-top: 10px;
+    padding-right: 10px;
 }
 
 /* animation */
@@ -302,5 +307,12 @@
     }
     .carousel{
         width: 100%;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    .thumbnail .item{
+        width: 180px;
+        height: 264px;
     }
 }

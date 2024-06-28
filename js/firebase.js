@@ -28,16 +28,16 @@ auth.languageCode = 'en'
 const provider = new GoogleAuthProvider();
 const loginWithGoogle = document.getElementById("login");
 const userInfo = document.getElementById("user-info");
-
+const logoutButton = document.getElementById("signout");
+const commentContainer = document.getElementById("comment-container");
 
 loginWithGoogle.addEventListener("click", function () {
     signInWithPopup(auth, provider)
         .then((result) => {
             const credential = GoogleAuthProvider.credentialFromResult(result);
             const user = result.user;
-            const menu = document.getElementById("menu");
-            const isMenuOpen = menu.classList.contains("open-menu");
-
+            logoutButton.style.display = "block";
+            commentContainer.style.display = "block";
             updateUserProfile(user);
         }).catch((error) => {
             const errorCode = error.code;
@@ -56,6 +56,8 @@ function checkAuthAndRedirect() {
         if (user) {
             loginWithGoogle.style.display = "none";
             isUserLoggedIn = true;
+            logoutButton.style.display = "block";
+            commentContainer.style.display = "block";
             userInfo.style.display = "block";
             updateUserProfile(user);
         } else {
@@ -85,7 +87,7 @@ function updateUserProfile(user) {
         verifyImageSrc = "Icon/verify.svg";
     }
 
-    let userNameHTML = `<span>Hello, ${userName}</span>`;
+    let userNameHTML = `<span>Hello, ${userName}</span>, please write something for me :3`;
     if (verifyImageSrc) {
         userNameHTML += `<img class="verified" src="${verifyImageSrc}" alt="Verified" />`;
     }
@@ -93,6 +95,7 @@ function updateUserProfile(user) {
     document.getElementById("userName").innerHTML = userNameHTML;
     document.getElementById("userEmail").textContent = userEmail;
     document.getElementById("userProfilePicture").src = userProfilePicture;
+    document.getElementById("username-label").textContent = `C:\\User\\${user.displayName}>`;
 }
 
 function logout() {
@@ -100,9 +103,7 @@ function logout() {
         .then(() => {
             clearUserProfile();
             userInfo.style.display = "none";
-            if (window.innerWidth <= 1024) {
-                toggleMenu();
-            }
+            commentContainer.style.display = "none";
         })
         .catch((error) => {
             console.error("Error signing out:", error);
@@ -115,6 +116,7 @@ function clearUserProfile() {
     document.getElementById("userName").textContent = "";
     document.getElementById("userEmail").textContent = "";
     document.getElementById("userProfilePicture").src = "Icon/grey-img.jpg";
+    document.getElementById("username-label").textContent = "";
 }
 
 function submitComment() {
@@ -127,8 +129,8 @@ function submitComment() {
             return;
         }
 
-        if (commentInput.length > 600) {
-            alert("Comment must not exceed 600 characters.");
+        if (commentInput.length > 500) {
+            alert("Message must not exceed 500 characters.");
             return;
         }
 
@@ -141,14 +143,14 @@ function submitComment() {
 
         var userCommentRef = ref(getDatabase(app), 'comments/' + user.uid);
         set(userCommentRef, comment).then(() => {
-            console.log("Comment saved successfully.");
+            console.log("Message saved successfully.");
             document.getElementById('comment-input').value = '';
             loadComments();
         }).catch((error) => {
             console.error("Error saving comment: ", error);
         });
     } else {
-        alert("Please log in to comment.");
+        alert("Please log in to send Message.");
     }
 }
 
