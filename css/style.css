@@ -1024,7 +1024,7 @@ section {
     }
     .timeline-item:nth-child(odd),
     .timeline-item:nth-child(even) {
-        padding-left: 37px;
+        padding-left: 0;
         padding-right: 0;
         text-align: left;
     }
@@ -1045,6 +1045,7 @@ section {
     }
     .timeline-content {
         padding: 20px 20px;
+        border-radius: 2rem;
     }
     .heading {
         font-size: 35px;
@@ -1052,6 +1053,7 @@ section {
     .timeline-date {
         font-size: 21px;
         background-color: rgba(19, 19, 19, 0.5);
+        padding-left: 37px;
     }
     .skills-container {
         grid-template-columns: repeat(2,1fr);
