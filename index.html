@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/project-slide.css">
     <link rel="stylesheet" href="css/custom-input.css">
+    <link rel="stylesheet" href="css/contact-list.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <meta property="og:type"    content="website" />
@@ -18,6 +19,11 @@
     <meta property="og:image"   content="https://firebasestorage.googleapis.com/v0/b/saveimage-5dfc7.appspot.com/o/rear-view-programmer-working-all-night-long.jpg?alt=media&token=1411f4fe-41b7-409d-8718-5a205a9c8576" />
 </head>
 <body>
+    <div id="show-contact-list">
+        <button id="close-contact-list" onclick="closeContactList()">Close</button>
+        <div id="contactList"></div>
+    </div>
+
     <div class="image-container">
         <img id="main-image" src="Image/abstract-futuristic-technology-with-polygonal-shapes-dark-blue-background-connection-technologies-backdrop-internet-communication.jpg" alt="Main image">
     </div>
@@ -473,22 +479,23 @@
     </section>
 
     <section class="contact" id="contact">
-        <h2 class="heading">Contact Me</h2>
+        <h2 class="heading">Contact Me For Work</h2>
 
-        <form action="">
+        <button id="open-contact-list"><i class='bx bxs-inbox' ></i></button>
+
+        <form id="contactForm">
             <div class="input-group">
                 <div class="input-box">
-                    <input type="text" placeholder="Full Name">
-                    <input type="email" placeholder="Email">
+                    <input type="text" id="fullName" placeholder="Full Name">
+                    <input type="email" id="email" placeholder="Email">
                 </div>
                 <div class="input-box">
-                    <input type="number" placeholder="Phone Number">
-                    <input type="text" placeholder="Subject">
+                    <input type="number" id="phoneNumber" placeholder="Phone Number">
+                    <input type="text" id="subject" placeholder="Subject">
                 </div>
             </div>
-
             <div class="input-group-2">
-                <textarea name="" id="" cols="30" row="10" placeholder="Your Message"></textarea>
+                <textarea id="message" cols="30" rows="15" placeholder="Your Message"></textarea>
                 <input type="submit" value="Send Message" class="btn">
             </div>
         </form>
@@ -519,7 +526,7 @@
             </div>
             <button id="send-comment"></button>
         </div>
-        
+
         <button id="login">Login with Google<span class="blinking-cursor">_</span></button>
         
         

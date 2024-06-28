@@ -97,3 +97,8 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
+function closeContactList() {
+    document.getElementById('show-contact-list').style.display = "none";
+}
+

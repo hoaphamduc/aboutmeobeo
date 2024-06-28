@@ -1,0 +1,33 @@
+#contactList .contact {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#show-contact-list {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 99999999999999999999;
+    background-color: #fff;
+    display: none;
+    overflow: auto;
+}
+
+#close-contact-list {
+    width: 100%;
+    height: auto;
+    font-size: 30px;
+    text-align: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#close-contact-list:hover {
+    text-decoration: underline;
+}
