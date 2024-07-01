@@ -851,6 +851,8 @@ section {
     color: #cccccc;
     background-color: #0c0c0c;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 .comment {

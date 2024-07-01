@@ -204,7 +204,7 @@ function addCommentToDOM(comment) {
     commentDiv.appendChild(timeSpan);
     commentDiv.appendChild(contentSpan);
 
-    listCommentDiv.appendChild(commentDiv);
+    listCommentDiv.insertBefore(commentDiv, listCommentDiv.firstChild);
 }
 
 // Hàm để cập nhật comment trong DOM
