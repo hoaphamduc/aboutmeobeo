@@ -701,9 +701,8 @@ section {
 #user-info {
     position: relative;
     display: none;
-    background-color: transparent;
-    width: auto;
-    height: 80px;
+    width: 100%;
+    height: auto;
     background-color: transparent;
     top: 0;
     left: 0;
@@ -743,7 +742,7 @@ section {
 }
 
 #userEmail {
-    width: auto;
+    width: calc(100% - 70px);
     font-size: 14px;
     position: relative;
     top: 20px;
@@ -751,6 +750,9 @@ section {
     cursor: default;
     color: #000;
     display: block;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 
@@ -769,7 +771,7 @@ section {
     border-top: 1px solid #707070;
     border-right: 1px solid #707070;
     position: relative;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 #cmd-toolbar img {
@@ -1057,6 +1059,9 @@ section {
     }
     .skills-container {
         grid-template-columns: repeat(2,1fr);
+    }
+    .leave-message {
+        padding: 5px;
     }
 }
 

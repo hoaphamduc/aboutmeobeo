@@ -2,7 +2,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 import { signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-import { get, child, push, ref, set, query, orderByChild, limitToLast, getDatabase } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js';
+import { get, remove, child, push, ref, set, query, orderByChild, limitToLast, getDatabase, onChildAdded, onChildChanged } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js';
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -158,47 +158,66 @@ function loadComments() {
     const commentsRef = ref(db, 'comments');
     const commentsQuery = query(commentsRef, orderByChild('timestamp'), limitToLast(20));
 
-    get(commentsQuery).then((snapshot) => {
-        if (snapshot.exists()) {
-            const commentsData = snapshot.val();
-            const commentsList = Object.values(commentsData).sort((a, b) => b.timestamp - a.timestamp);
-            const listCommentDiv = document.getElementById('list-comment');
-            listCommentDiv.innerHTML = '';
+    const listCommentDiv = document.getElementById('list-comment');
+    listCommentDiv.innerHTML = '';
 
-            commentsList.forEach(comment => {
-                const commentDiv = document.createElement('div');
-                commentDiv.className = 'comment';
-
-                const avatarImg = document.createElement('img');
-                avatarImg.className = 'comment-avatar';
-                avatarImg.alt = 'comment avatar';
-                avatarImg.src = comment.avatarUrl || 'default-avatar-url.jpg';
-
-                const nameSpan = document.createElement('span');
-                nameSpan.className = 'comment-name';
-                nameSpan.textContent = comment.username;
-
-                const timeSpan = document.createElement('span');
-                timeSpan.className = 'comment-time';
-                const date = new Date(comment.timestamp);
-                timeSpan.textContent = date.toLocaleString();
-                const contentSpan = document.createElement('span');
-                contentSpan.className = 'comment-content ellipsis';
-                contentSpan.textContent = comment.content;
-
-                commentDiv.appendChild(avatarImg);
-                commentDiv.appendChild(nameSpan);
-                commentDiv.appendChild(timeSpan);
-                commentDiv.appendChild(contentSpan);
-
-                listCommentDiv.appendChild(commentDiv);
-            });
-        } else {
-            console.log("No comments available");
-        }
-    }).catch((error) => {
-        console.error("Error loading comments: ", error);
+    onChildAdded(commentsQuery, (data) => {
+        const comment = data.val();
+        comment.id = data.key;
+        addCommentToDOM(comment);
     });
+
+    onChildChanged(commentsQuery, (data) => {
+        const comment = data.val();
+        comment.id = data.key;
+        updateCommentInDOM(comment);
+    });
+}
+
+// Hàm để thêm comment vào DOM
+function addCommentToDOM(comment) {
+    const listCommentDiv = document.getElementById('list-comment');
+    const commentDiv = document.createElement('div');
+    commentDiv.className = 'comment';
+    commentDiv.id = `comment-${comment.id}`;
+
+    const avatarImg = document.createElement('img');
+    avatarImg.className = 'comment-avatar';
+    avatarImg.alt = 'comment avatar';
+    avatarImg.src = comment.avatarUrl || 'default-avatar-url.jpg';
+
+    const nameSpan = document.createElement('span');
+    nameSpan.className = 'comment-name';
+    nameSpan.textContent = comment.username;
+
+    const timeSpan = document.createElement('span');
+    timeSpan.className = 'comment-time';
+    const date = new Date(comment.timestamp);
+    timeSpan.textContent = date.toLocaleString();
+
+    const contentSpan = document.createElement('span');
+    contentSpan.className = 'comment-content ellipsis';
+    contentSpan.textContent = comment.content;
+
+    commentDiv.appendChild(avatarImg);
+    commentDiv.appendChild(nameSpan);
+    commentDiv.appendChild(timeSpan);
+    commentDiv.appendChild(contentSpan);
+
+    listCommentDiv.appendChild(commentDiv);
+}
+
+// Hàm để cập nhật comment trong DOM
+function updateCommentInDOM(comment) {
+    const commentDiv = document.getElementById(`comment-${comment.id}`);
+    if (commentDiv) {
+        commentDiv.querySelector('.comment-avatar').src = comment.avatarUrl || 'default-avatar-url.jpg';
+        commentDiv.querySelector('.comment-name').textContent = comment.username;
+        commentDiv.querySelector('.comment-time').textContent = new Date(comment.timestamp).toLocaleString();
+        commentDiv.querySelector('.comment-content').textContent = comment.content;
+    } else {
+        addCommentToDOM(comment);
+    }
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -235,14 +254,13 @@ document.getElementById('contactForm').addEventListener('submit', function(event
         .then(() => {
             alert("Message sent successfully!");
             document.getElementById('contactForm').reset();
+            getAllContacts();
         })
         .catch((error) => {
             console.error("Error adding document: ", error);
         });
     } else { loginWithGoogle.click(); }
 });
-
-
 
 // Hàm để lấy tất cả các contact
 function getAllContacts() {
@@ -277,12 +295,35 @@ function displayContacts(contacts) {
                 <p><strong>Subject:</strong> ${contact.subject}</p>
                 <p><strong>Message:</strong> ${contact.message}</p>
                 <p><strong>Timestamp:</strong> ${new Date(contact.timestamp).toLocaleString()}</p>
+                <button class="delete-contact" data-key="${key}">Delete</button>
             `;
 
             contactList.appendChild(contactElement);
         }
     }
+
+    // Lắng nghe sự kiện click vào nút delete
+    document.querySelectorAll('.delete-contact').forEach(button => {
+        button.addEventListener('click', function() {
+            const contactKey = this.getAttribute('data-key');
+            deleteContact(contactKey);
+        });
+    });
 }
+
+// Hàm để xóa contact
+function deleteContact(contactKey) {
+    const contactRef = ref(database, 'contacts/' + contactKey);
+    remove(contactRef)
+    .then(() => {
+        alert("Contact deleted successfully!");
+        getAllContacts();
+    })
+    .catch((error) => {
+        console.error("Error deleting document: ", error);
+    });
+}
+
 
 // Kiểm tra xác thực người dùng
 onAuthStateChanged(auth, (user) => {
