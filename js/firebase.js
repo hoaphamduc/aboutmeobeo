@@ -239,7 +239,7 @@ document.getElementById('contactForm').addEventListener('submit', function(event
         .catch((error) => {
             console.error("Error adding document: ", error);
         });
-    } else { alert("Please log in to send me contact."); }
+    } else { loginWithGoogle.click(); }
 });
 
 
