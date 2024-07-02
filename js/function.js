@@ -102,3 +102,15 @@ function closeContactList() {
     document.getElementById('show-contact-list').style.display = "none";
 }
 
+function changeNavBackground() {
+    var nav = document.getElementById("header");
+    if (window.scrollY > 30) {
+        nav.style.backgroundColor = "rgba(0, 0, 0, 0.3)";
+        nav.style.color = "#fff";
+    } else {
+        nav.style.backgroundColor = "transparent";
+        nav.style.color = "#000";
+    }
+}
+
+window.addEventListener("scroll", changeNavBackground);
