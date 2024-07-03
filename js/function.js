@@ -61,7 +61,7 @@ window.onscroll = () => {
         let top = window.scrollY;
         let offset = sec.offsetTop - 150;
         let height = sec.offsetHeight;
-        let id = sec.getAttribute('id');  // Sửa đổi ở đây
+        let id = sec.getAttribute('id');
 
         if (top >= offset && top < offset + height) {
             navLinks.forEach(link => {
@@ -106,10 +106,10 @@ function changeNavBackground() {
     var nav = document.getElementById("header");
     if (window.scrollY > 30) {
         nav.style.backgroundColor = "rgba(0, 0, 0, 0.3)";
-        nav.style.color = "#fff";
+        nav.style.backdropFilter = "blur(10px)";
     } else {
         nav.style.backgroundColor = "transparent";
-        nav.style.color = "#000";
+        nav.style.backdropFilter = "none";
     }
 }
 

@@ -39,7 +39,7 @@ input[type=number]::-webkit-inner-spin-button {
     width: 100%;
     padding: 1.5rem 3% 1.5rem;
     background: transparent;
-    backdrop-filter: blur(10px);
+    backdrop-filter: none;
     display: flex;
     justify-content: center;
     z-index: 999999;
