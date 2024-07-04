@@ -344,3 +344,17 @@ document.getElementById('open-contact-list').addEventListener("click", function(
     document.getElementById('show-contact-list').style.display = "block"; 
     getAllContacts();
 });
+
+function updateVisitCount() {
+    const visitCountRef = ref(database, 'visits');
+    get(visitCountRef).then(snapshot => {
+        let currentCount = snapshot.val();
+        if (currentCount === null) {
+            currentCount = 0;
+        }
+        set(visitCountRef, currentCount + 1);
+        document.getElementById('total-view').textContent = 'Number of website visits: ' + (currentCount + 1);
+    });
+}
+
+window.onload = updateVisitCount;
