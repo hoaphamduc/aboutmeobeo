@@ -19,7 +19,7 @@ if (CSS.supports('animation-timeline', 'auto')) {
 }
 
 const textSpan = document.getElementById('text-span');
-const texts = ["Frontend Designer", "Web Designer", "UI / UX Designer", "Android Developer", "Web Developer"];
+const texts = ["Fullstack Developer", "Web Designer"];
 let textIndex = 0;
 let charIndex = 0;
 let deleting = false;
@@ -79,8 +79,6 @@ menuIcon.onclick = () => {
     menuIcon.classList.toggle('bx-x');
     navbar.classList.toggle('active');
 }
-
-// open project in new tab
 
 function openProject(link) {
     window.open(link, "_blank");
